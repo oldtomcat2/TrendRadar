@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 1 * * *'
-
+  push: # 新增：当代码被推送到test分支时，自动触发
+    branches:
+      - test
 jobs:
   run:
     runs-on: ubuntu-latest
